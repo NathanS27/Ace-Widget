@@ -1,25 +1,34 @@
 package employee;
 
+
 import java.util.*;
 
 public class Team {
 
-	List <Employee> employees= new ArrayList<Employee>(); 
+	private Employee emp;
+	
+	List<Employee> team = new ArrayList<Employee>();
 
-	public void collection(Employee emp) {
-		employees.add(emp);
+
+		
+	public void addMember(Employee employee) {
+		emp = employee;
+		team.add(emp);
+	}
+	
+	public Employee getMember(int index) {	
+		return team.get(index);
 	}
 	
 	public String toString() {
-		
+
 		String str = "";
 		
-		Iterator<Employee> itr=employees.iterator();  
-		
-		while(itr.hasNext()){  
-		str += (itr.next()); 
-		
-		return str;
+		for(Employee emp : team){
+			str += emp.name + ", ";
 		}
+		return str;
 	}
+	
 }
+

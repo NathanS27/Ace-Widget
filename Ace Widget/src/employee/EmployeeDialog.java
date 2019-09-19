@@ -17,40 +17,33 @@ public class EmployeeDialog extends GBDialog{
     JButton okBtn = addButton 						("OK", 4,2,2,1);
     JButton cancelBtn = addButton 					("Cancel", 4,4,2,1);
 
-    private Employee emp;
+    public Employee newEmp = null;
     
-    public EmployeeDialog(JFrame parent, Employee emp){
+    public EmployeeDialog(JFrame parent){
         	
         super (parent);             
         setTitle ("Edit Employee");
         setDlgCloseIndicator ("Cancel");                
-        setSize (300, 200);  
-        
-        this.emp = emp;
-
+        setSize (300, 200); 
     }
-
-  
-
+    
     public void buttonClicked(JButton buttonObj){
-    	int q1, q2, q3, q4;
-    	String nm;
         if (buttonObj == okBtn){
-
-           nm = nameFld.getName();
-           q1 = q1Fld.getNumber();
-           q2 = q2Fld.getNumber();;
-           q3 = q3Fld.getNumber();;
-           q4 = q4Fld.getNumber();;
+        	int q1, q2, q3, q4;
+        	String nm;
         	
-           Employee emp = new Employee(nm, q1, q2, q3, q4);
+           nm = nameFld.getText();
+           q1 = q1Fld.getNumber();
+           q2 = q2Fld.getNumber();
+           q3 = q3Fld.getNumber();
+           q4 = q4Fld.getNumber();
+ 
+           newEmp = new Employee(nm, q1, q2, q3, q4);
            
             setDlgCloseIndicator ("OK");
-
         }
+       
 
         dispose();
-
     }
-
 }
