@@ -40,10 +40,9 @@ public class EmployeeDialog extends GBDialog{
  
            newEmp = new Employee(nm, q1, q2, q3, q4);
            
-            setDlgCloseIndicator ("OK");
+           setDlgCloseIndicator ("OK");
         }
-       
-
         dispose();
     }
 }
+
